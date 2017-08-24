@@ -75,7 +75,7 @@ function showBasicCards(front, back) {
     });
 }
 
-function showClozeCards(partial, cloze) {
+function showClozeCards(partial, cloze, fullText) {
   inquirer
   .prompt([
     
@@ -89,24 +89,24 @@ function showClozeCards(partial, cloze) {
   .then(function(inquirerResponse) {
    
     if (inquirerResponse.question === cloze) {
-      console.log("\nYou are correct!");
+      console.log("\nCorrect!");
       score++;
       questionTally++;
       console.log("Score: " + score + "/" + questionTally + "\n");
 
       if (questionTally < 5) {
-          getBasicCard();
+          getClozeCard();
         } else {
             playAgain();
         }
     }
     else {
-      console.log("\nYou are wrong!");
+      console.log("\nWrong! " + fullText);
       questionTally++;
       console.log("Score: " + score + "/" + questionTally + "\n");
 
       if (questionTally < 5) {
-          getBasicCard();
+          getClozeCard();
       } else {
           playAgain();
       }
@@ -131,7 +131,7 @@ function getClozeCard(){
 
   var data = clozeObject[Math.floor(Math.random() * clozeObject.length)];
   var card = new ClozeCard(data.fullText, data.cloze);
-  showClozeCards(card.partial, card.cloze);
+  showClozeCards(card.partial, card.cloze, card.fullText);
 }
 
 function playAgain(){
