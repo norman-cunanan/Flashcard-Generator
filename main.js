@@ -8,7 +8,7 @@ var clozeObject = require("./ClozeObject.js")
 var score = 0;
 var questionTally = 0;
 
-
+//ask which flashcards to study
 function whichFlashCards () {
   inquirer.prompt([
     {
@@ -35,6 +35,7 @@ function whichFlashCards () {
   });
 }
 
+//Shows front of the card as question 
 function showBasicCards(front, back) {
   
     inquirer
@@ -75,6 +76,7 @@ function showBasicCards(front, back) {
     });
 }
 
+//show partial text as a question
 function showClozeCards(partial, cloze, fullText) {
   inquirer
   .prompt([
@@ -114,19 +116,15 @@ function showClozeCards(partial, cloze, fullText) {
   });
 }
 
+//get front/back of card from basicObject
 function getBasicCard(){
-
-  // for (i =0; i < basicObject.length; i++) {
-  //   var card = new BasicCard(basicObject[i].front, basicObject[i].back);
-  //   showBasicCards(card.front, card.back);
-  // }
 
   //randomly grabs from basicObject
   var data = basicObject[Math.floor(Math.random() * basicObject.length)];
   var card = new BasicCard(data.front, data.back);
   showBasicCards(card.front, card.back);
 }
-
+//getting info of card from clozeObject
 function getClozeCard(){
 
   var data = clozeObject[Math.floor(Math.random() * clozeObject.length)];
@@ -134,6 +132,7 @@ function getClozeCard(){
   showClozeCards(card.partial, card.cloze, card.fullText);
 }
 
+//asking to play again
 function playAgain(){
   inquirer.prompt([
     {
@@ -159,6 +158,7 @@ function playAgain(){
   });
 }
 
+// starts app
 whichFlashCards();
 
 

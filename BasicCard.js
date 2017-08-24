@@ -13,11 +13,6 @@ BasicCard.prototype.printInfo = function() {
 	console.log("Back: " + this.back);
 };
 
-// for (i =0; i < basicObject.length; i++) {
-// 	console.log(basicObject[i].front);
-// }
-
-
 
 // var firstCard = new BasicCard("Who was the first president of the United States?", 
 // 	"George Washingtion");
