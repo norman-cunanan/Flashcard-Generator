@@ -1,0 +1,24 @@
+//Figure out how to use my own JSON file
+
+[
+{
+	"front": "What is the capital of California?",
+	"back": "Sacramento"
+},
+{
+	"front": "What is the captial of Nevada?",
+	"back": "Carson City"
+},
+{
+	"front": "What is the capital of Oregon?",
+	"back": "Salem"
+},
+{
+	"front": "What is the capital of Washington?",
+	"back": "Olympia"
+},
+{
+	"front": "What is the capital of Arizona?",
+	"back": "Phoenix"
+},
+]
