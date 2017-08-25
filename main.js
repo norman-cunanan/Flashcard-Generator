@@ -50,7 +50,7 @@ function showBasicCards(front, back) {
     ])
     .then(function(inquirerResponse) {
    
-      if (inquirerResponse.question === back) {
+      if (inquirerResponse.question === back || inquirerResponse.question === back.toLowerCase()) {
         console.log("\nCorrect!");
         score++;
         questionTally++;
@@ -90,7 +90,7 @@ function showClozeCards(partial, cloze, fullText) {
   ])
   .then(function(inquirerResponse) {
    
-    if (inquirerResponse.question === cloze) {
+    if (inquirerResponse.question === cloze || inquirerResponse.question === cloze.toLowerCase()) {
       console.log("\nCorrect!");
       score++;
       questionTally++;
